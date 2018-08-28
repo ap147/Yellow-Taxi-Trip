@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    text-align: center;
+}
+
+.nav {
+    height: 200px;
+    width: 100%;
+    background-color: dimgrey
+}
+
+.nav #taxiCar {
+    height: 200px;
+}
+
+.nav #titleTaxi {
+    font :200px sans-serif;
+    color: white;
+}
+.nav #logout{
+    float: right;
+    
+}
+
+.nav #taxiCar,
+.nav #titleTaxi {
+    display: inline;
+    vertical-align: top;
+}
+
+.sidenav {
+    height:100%;
+    width: 150px;
+    position: fixed;
+    z-index: 1;
+    top: 200px;
+    left: 0;
+    background-color: darkgray;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav p {
+font-size: 15px;
+    color: black;
+    display: block;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 150px; /* Same as the width of the sidenav */
+    padding: 0px 10px;
+}
