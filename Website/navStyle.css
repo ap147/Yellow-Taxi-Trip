@@ -62,3 +62,10 @@ font-size: 15px;
     margin-left: 150px; /* Same as the width of the sidenav */
     padding: 0px 10px;
 }
+
+.login {
+    background-color: floralwhite;
+    margin-left: 600px;
+    margin-right: 600px;
+    font-size: 30px;
+}
