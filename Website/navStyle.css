@@ -2,6 +2,10 @@ body {
     margin: 0;
     text-align: center;
 }
+#driverpage,
+#adminpage {
+    display: none;
+}
 
 .nav {
     height: 200px;
@@ -63,9 +67,10 @@ font-size: 15px;
     padding: 0px 10px;
 }
 
-.login {
+#login {
     background-color: floralwhite;
     margin-left: 600px;
     margin-right: 600px;
     font-size: 30px;
 }
+

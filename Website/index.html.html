@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+        <link rel="stylesheet" href="navStyle.css">
+        <script src="myScript.js"></script>
+	</head>
+	<body background="taxiBackground.png">   
+        <div class="nav">
+            
+              <img id="taxiCar" src="taxi.png" alt="taxi" onclick="backHome()"> 
+              <p id="titleTaxi">Taxi</p>
+         
+        </div>
+        
+        <br>
+        <br>
+        
+        <div id ="login">
+            <form>
+                <input type="checkbox" name="logintype" value="driver" id="radioDriver">      Drivers
+                <input type="checkbox" name="logintype" value="admin" id="radioAdmin"> Admin
+                
+                <br>
+                <br>
+                
+                <label for="usernameID">UserName</label>
+                <input type="text" id="usernameID" name="loginDetails">
+                
+                <br>
+                <br>
+                
+                <label for="passwordnameID">Password</label>
+                <input type="text" id="passwordnameID" name="loginDetails">
+                
+                <br>
+                <br>
+                
+                 <button type="button" value="login" onclick="changePage()">Login</button> 
+            </form>
+        </div>
+<!--Admin page-------------------------------------->
+    
+    <div id= "adminpage">
+        <div class="sidenav">
+            <a href="#">View Drivers</a>
+            <a href="#">View Trips</a>
+        </div>
+        
+        <!--when the user clicks one of the options on the side we just hide the tdivs which are not needed-->
+        <div class="info">
+            
+            
+            <div class="viewDrivers">
+                
+                
+            </div> 
+            
+            <div class="viewTrips">
+                
+                
+            </div> 
+        </div>
+        
+    </div> 
+<!--driver Page-------------------------------------->
+        
+        <div id = "driverpage">
+            <div class="sidenav">
+                <p id="">Driver Details</p>
+                <p>Name:</p>
+                <p id="driverName">James Cook</p>
+
+                <p>Active:</p>
+                <p id="driverActive">Yes</p>
+
+                <p>license number:</p>
+                <p id="driverActive">256987456</p>
+
+                <p>expire:</p>
+                <p id="driverexpire">31.1.2020</p>
+            </div>
+
+            <div class="main">
+                <h1>Analytics</h1>
+                <div class="analytics">
+
+                </div>
+            </div>
+        </div>
+        
+	</body>
+</html>
