@@ -20,3 +20,16 @@ function changePage() {
 function backHome() {
      location.reload();
 }
+
+function functionViewDrivers() {
+    
+    document.getElementById("viewTrips").style.display = "none";
+    document.getElementById("viewDrivers").style.display = "block";
+
+}
+
+function functionViewTrips() {
+    document.getElementById("viewDrivers").style.display = "none";
+    document.getElementById("viewTrips").style.display = "block";
+
+}

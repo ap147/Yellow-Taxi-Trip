@@ -62,7 +62,8 @@ font-size: 15px;
     color: #f1f1f1;
 }
 
-.main {
+.main,
+.info{
     margin-left: 150px; /* Same as the width of the sidenav */
     padding: 0px 10px;
 }
@@ -74,3 +75,24 @@ font-size: 15px;
     font-size: 30px;
 }
 
+table {
+    background-color: white;
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#viewTrips,
+#viewDrivers {
+    display: none;
+}
