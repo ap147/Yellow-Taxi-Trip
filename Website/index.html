@@ -1,200 +1,203 @@
 <!DOCTYPE HTML>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-        <link rel="stylesheet" href="navStyle.css">
-        <script src="myScript.js"></script>
-	</head>
-	<body background="taxiBackground.png">   
-        <div class="nav">
-            
-              <img id="taxiCar" src="taxi.png" alt="taxi" onclick="backHome()"> 
-              <p id="titleTaxi">Taxi</p>
-         
-        </div>
-        
-        <br>
-        <br>
-<!--login Page-------------------------------------->
-        <div id ="login">
-            <form>
-                <input type="radio" name="logintype" value="driver" id="radioDriver">      Drivers
-                <input type="radio" name="logintype" value="admin" id="radioAdmin"> Admin
-                
-                <br>
-                <br>
-                
-                <label for="usernameID">UserName</label>
-                <input type="text" id="usernameID" name="loginDetails">
-                
-                <br>
-                <br>
-                
-                <label for="passwordnameID">Password</label>
-                <input type="text" id="passwordnameID" name="loginDetails">
-                
-                <br>
-                <br>
-                
-                 <button type="button" value="login" onclick="changePage()">Login</button> 
-            </form>
-        </div>
-<!--Admin page-------------------------------------->
-    
-    <div id= "adminpage">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="navStyle.css">
+    <script src="myScript.js"></script>
+</head>
+
+<body background="taxiBackground.png">
+    <div class="nav">
+
+        <img id="taxiCar" src="taxi.png" alt="taxi" onclick="backHome()">
+        <p id="titleTaxi">Taxi</p>
+
+    </div>
+
+    <br>
+    <br>
+    <!--login Page-------------------------------------->
+    <div id="login">
+        <form>
+            <input type="radio" name="logintype" value="driver" id="radioDriver"> Drivers
+            <input type="radio" name="logintype" value="admin" id="radioAdmin"> Admin
+
+            <br>
+            <br>
+
+            <label for="usernameID">UserName</label>
+            <input type="text" id="usernameID" name="loginDetails">
+
+            <br>
+            <br>
+
+            <label for="passwordnameID">Password</label>
+            <input type="password" id="passwordnameID" name="loginDetails">
+
+            <br>
+            <br>
+
+            <button type="button" value="login" onclick="changePage()">Login</button>
+        </form>
+    </div>
+    <!--Admin page-------------------------------------->
+
+    <div id="adminpage">
         <div class="sidenav">
             <a id=adminDriverTab href="#" onclick="functionViewDrivers()">View Drivers</a>
             <a id=adminTripTab href="#" onclick="functionViewTrips()">View Trips</a>
         </div>
-        
+
         <!--when the user clicks one of the options on the side we just hide the tdivs which are not needed-->
         <div class="info">
-            
-            
+
+
             <div id="viewDrivers">
                 <table>
-                      <tr>
+                    <tr>
                         <th>Company</th>
                         <th>Contact</th>
                         <th>Country</th>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Alfreds Futterkiste</td>
                         <td>Maria Anders</td>
                         <td>Germany</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Centro comercial Moctezuma</td>
                         <td>Francisco Chang</td>
                         <td>Mexico</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Ernst Handel</td>
                         <td>Roland Mendel</td>
                         <td>Austria</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Island Trading</td>
                         <td>Helen Bennett</td>
                         <td>UK</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Laughing Bacchus Winecellars</td>
                         <td>Yoshi Tannamuri</td>
                         <td>Canada</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Magazzini Alimentari Riuniti</td>
                         <td>Giovanni Rovelli</td>
                         <td>Italy</td>
-                      </tr>
-                 </table>
-            </div> 
-            
+                    </tr>
+                </table>
+            </div>
+
             <div id="viewTrips">
                 <table>
-                      <tr>
+                    <tr>
                         <th>Company1</th>
                         <th>Contact</th>
                         <th>Country</th>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Alfreds Futterkiste</td>
                         <td>Maria Anders</td>
                         <td>Germany</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Centro comercial Moctezuma</td>
                         <td>Francisco Chang</td>
                         <td>Mexico</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Ernst Handel</td>
                         <td>Roland Mendel</td>
                         <td>Austria</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Island Trading</td>
                         <td>Helen Bennett</td>
                         <td>UK</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Laughing Bacchus Winecellars</td>
                         <td>Yoshi Tannamuri</td>
                         <td>Canada</td>
-                      </tr>
-                      <tr>
+                    </tr>
+                    <tr>
                         <td>Magazzini Alimentari Riuniti</td>
                         <td>Giovanni Rovelli</td>
                         <td>Italy</td>
-                      </tr>
+                    </tr>
                 </table>
-            </div> 
-        </div>
-        
-    </div> 
-<!--driver Page-------------------------------------->
-        
-        <div id = "driverpage">
-            <div class="sidenav">
-                <p id="">Driver Details</p>
-                <p>Name:</p>
-                <p id="driverName">James Cook</p>
-
-                <p>Active:</p>
-                <p id="driverActive">Yes</p>
-
-                <p>license number:</p>
-                <p id="driverActive">256987456</p>
-
-                <p>expire:</p>
-                <p id="driverexpire">31.1.2020</p>
-            </div>
-
-            <div class="main">
-                <h1>Analytics</h1>
-                <div class="analyticsDriver">
-                    <table>
-                          <tr>
-                            <th>Company</th>
-                            <th>Contact</th>
-                            <th>Country</th>
-                          </tr>
-                          <tr>
-                            <td>Alfreds Futterkiste</td>
-                            <td>Maria Anders</td>
-                            <td>Germany</td>
-                          </tr>
-                          <tr>
-                            <td>Centro comercial Moctezuma</td>
-                            <td>Francisco Chang</td>
-                            <td>Mexico</td>
-                          </tr>
-                          <tr>
-                            <td>Ernst Handel</td>
-                            <td>Roland Mendel</td>
-                            <td>Austria</td>
-                          </tr>
-                          <tr>
-                            <td>Island Trading</td>
-                            <td>Helen Bennett</td>
-                            <td>UK</td>
-                          </tr>
-                          <tr>
-                            <td>Laughing Bacchus Winecellars</td>
-                            <td>Yoshi Tannamuri</td>
-                            <td>Canada</td>
-                          </tr>
-                          <tr>
-                            <td>Magazzini Alimentari Riuniti</td>
-                            <td>Giovanni Rovelli</td>
-                            <td>Italy</td>
-                          </tr>
-                    </table>
-                </div>
             </div>
         </div>
-        
-	</body>
+
+    </div>
+    <!--driver Page-------------------------------------->
+
+    <div id="driverpage">
+        <div class="sidenav">
+            <p id="">Driver Details</p>
+            <p>Name:</p>
+            <p id="driverName">James Cook</p>
+
+            <p>Active:</p>
+            <p id="driverActive">Yes</p>
+
+            <p>license number:</p>
+            <p id="driverActive">256987456</p>
+
+            <p>expire:</p>
+            <p id="driverexpire">31.1.2020</p>
+        </div>
+
+        <div class="main">
+            <h1>Analytics</h1>
+            <div class="analyticsDriver">
+                <table>
+                    <tr>
+                        <th>Company</th>
+                        <th>Contact</th>
+                        <th>Country</th>
+                    </tr>
+                    <tr>
+                        <td>Alfreds Futterkiste</td>
+                        <td>Maria Anders</td>
+                        <td>Germany</td>
+                    </tr>
+                    <tr>
+                        <td>Centro comercial Moctezuma</td>
+                        <td>Francisco Chang</td>
+                        <td>Mexico</td>
+                    </tr>
+                    <tr>
+                        <td>Ernst Handel</td>
+                        <td>Roland Mendel</td>
+                        <td>Austria</td>
+                    </tr>
+                    <tr>
+                        <td>Island Trading</td>
+                        <td>Helen Bennett</td>
+                        <td>UK</td>
+                    </tr>
+                    <tr>
+                        <td>Laughing Bacchus Winecellars</td>
+                        <td>Yoshi Tannamuri</td>
+                        <td>Canada</td>
+                    </tr>
+                    <tr>
+                        <td>Magazzini Alimentari Riuniti</td>
+                        <td>Giovanni Rovelli</td>
+                        <td>Italy</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</body>
+
 </html>
