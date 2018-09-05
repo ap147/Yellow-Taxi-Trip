@@ -12,8 +12,8 @@ function changePage() {
         document.getElementById("driverpage").style.display = "block";
         var userid;
         userid = document.getElementById("usernameID").value;
-        console.log(userid);
         loadDoc(userid);
+        
     }
 
 }
@@ -44,6 +44,9 @@ function loadDoc(loggedID) {
             var response = JSON.parse(this.responseText).body.Item;
             console.log(response);
             document.getElementById("driverName").innerHTML = response.Name;
+            document.getElementById("driverNumber").innerHTML = (response["License Number"]);
+            document.getElementById("driverexpire").innerHTML = (response["Expiration Date"]);
+
         }
     };
     xhttp.open("GET", "https://q6c3ujfk81.execute-api.us-east-2.amazonaws.com/default/getDriverDetails?id=" + loggedID, true);
