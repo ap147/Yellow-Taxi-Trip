@@ -1,3 +1,4 @@
+var tempid;
 function changePage() {
     
      
@@ -7,9 +8,10 @@ function changePage() {
 
         document.getElementById("adminpage").style.display = "block";
         document.getElementById("login").style.display = "none";
-        var userid;
-        userid = document.getElementById("usernameID").value;
-        loadAdmin(userid);
+        
+        tempid = document.getElementById("usernameID").value;
+        
+        
 
     } else if (document.getElementById("radioDriver").checked == true) {
 
@@ -31,13 +33,15 @@ function functionViewDrivers() {
 
     document.getElementById("viewTrips").style.display = "none";
     document.getElementById("viewDrivers").style.display = "block";
-
+    loadAdmin(tempid, 2);
 
 }
 
 function functionViewTrips() {
     document.getElementById("viewDrivers").style.display = "none";
     document.getElementById("viewTrips").style.display = "block";
+    
+    loadAdmin(tempid, 1);
 
 }
 

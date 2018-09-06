@@ -48,18 +48,32 @@ function loadAdminDriverR() {
 
 }
 
-function loadAdmin(loggedID) {
+function loadAdmin(loggedID, whichTabAdmin) {
     var idList = new Array();
     for(var i = 0; i < adminDriverRAdmin.length;i++){
         if(adminDriverRAdmin[i] == loggedID){
             idList.push(i);
         }
     }
-    for(i in idList){
-        console.log("getting Driver ID : "+ adminDriverRDriver[i]);
-       
-        loadDriverTrip(adminDriverRDriver[i], 2);
-    }
+    
+    if (whichTabAdmin == 1)
+        {
+            for(i in idList)
+            {
+                console.log("getting Driver ID : "+ adminDriverRDriver[i]);
+
+                loadDriverTrip(adminDriverRDriver[i], 2);
+            }
+        }
+    else if (whichTabAdmin == 2)
+        {
+             for(i in idList)
+            {
+                console.log("getting Driver ID : "+ adminDriverRDriver[i]);
+
+                loadDriver(adminDriverRDriver[i], 2);
+            }
+        }
 }
 
 function loadDriver(loggedID , whatToDo) {
@@ -96,11 +110,11 @@ function loadDriver(loggedID , whatToDo) {
     xhttp.open("GET", "https://q6c3ujfk81.execute-api.us-east-2.amazonaws.com/default/getDriverDetails?id=" + loggedID, true);
     xhttp.send();
     
-    loadDriverTrip(loggedID);
+    loadDriverTrip(loggedID, 1);
 }
 
 
-function loadDriverTrip(loggedID) {
+function loadDriverTrip(loggedID, fromadmin) {
     //get fare IDs
     var idList = new Array();
     for(var i = 0; i < driverTripRDriver.length;i++){
@@ -114,6 +128,9 @@ function loadDriverTrip(loggedID) {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText).body.Item;
             //add row to html table code
+            
+            if (fromadmin == 1)
+                {
             var table = document.getElementById("driverFareTable");
             var row = table.insertRow(1);
             var cell1 = row.insertCell(0);
@@ -123,6 +140,19 @@ function loadDriverTrip(loggedID) {
             cell1.innerHTML = response.tpep_pickup_datetime;
             cell2.innerHTML = response.trip_distance + "Km";
             cell3.innerHTML = "$" + response.total_amount;
+                }
+            else if (fromadmin == 2)
+                {
+            var table = document.getElementById("adminTripsTable");
+            var row = table.insertRow(1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            
+            cell1.innerHTML = response.tpep_pickup_datetime;
+            cell2.innerHTML = response.trip_distance + "Km";
+            cell3.innerHTML = "$" + response.total_amount;
+                }
             
             console.log(response.trip_distance);
         }
