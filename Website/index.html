@@ -6,9 +6,10 @@
     <title></title>
     <link rel="stylesheet" href="navStyle.css">
     <script src="myScript.js"></script>
+    <script src="awsFunction.js"></script>
 </head>
 
-<body background="taxiBackground.png">
+<body  onload="setbackground(); loadData()"  >
     <div class="nav">
 
         <img id="taxiCar" src="taxi.png" alt="taxi" onclick="backHome()">

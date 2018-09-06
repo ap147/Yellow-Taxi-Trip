@@ -1,10 +1,15 @@
 function changePage() {
+    
+     
 
     console.log("pressed");
     if (document.getElementById("radioAdmin").checked == true) {
 
         document.getElementById("adminpage").style.display = "block";
         document.getElementById("login").style.display = "none";
+        var userid;
+        userid = document.getElementById("usernameID").value;
+        loadAdmin(userid);
 
     } else if (document.getElementById("radioDriver").checked == true) {
 
@@ -12,7 +17,7 @@ function changePage() {
         document.getElementById("driverpage").style.display = "block";
         var userid;
         userid = document.getElementById("usernameID").value;
-        loadDoc(userid);
+        loadDriver(userid);
         
     }
 
@@ -36,19 +41,27 @@ function functionViewTrips() {
 
 }
 
-function loadDoc(loggedID) {
 
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            var response = JSON.parse(this.responseText).body.Item;
-            console.log(response);
-            document.getElementById("driverName").innerHTML = response.Name;
-            document.getElementById("driverNumber").innerHTML = (response["License Number"]);
-            document.getElementById("driverexpire").innerHTML = (response["Expiration Date"]);
+function setbackground()
+{
+    window.setTimeout( "setbackground()", 50000); // 50000 milliseconds delay
 
-        }
-    };
-    xhttp.open("GET", "https://q6c3ujfk81.execute-api.us-east-2.amazonaws.com/default/getDriverDetails?id=" + loggedID, true);
-    xhttp.send();
+    var index = Math.round(Math.random() * 5);
+
+    var ImagePath = "image0.png"; // default image
+
+    if(index == 1)
+        ImagePath = "image1.jpeg"; 
+    if(index == 2)
+        ImagePath = "image2.png";
+    if(index == 3)
+        ImagePath = "image3.jpg";
+    if(index == 4)
+        ImagePath = "image4.jpg";
+    if(index == 5)
+        ImagePath = "image5.jpg"; 
+
+    document.getElementsByTagName("body")[0].style.backgroundImage="url('"+ ImagePath + "')"
+
 }
+

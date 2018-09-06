@@ -1,0 +1,28 @@
+
+<body onload="setbackground();"> 
+
+<label for="passwordnameID">Password</label>
+<input type="text" id="passwordnameID" name="loginDetails">
+
+function setbackground()
+{
+    window.setTimeout( "setbackground()", 50000); // 50000 milliseconds delay
+
+    var index = Math.round(Math.random() * 5);
+
+    var ImagePath = "image0.png"; // default image
+
+    if(index == 1)
+        ImagePath = "image1.jpeg"; 
+    if(index == 2)
+        ImagePath = "image2.png";
+    if(index == 3)
+        ImagePath = "image3.jpg";
+    if(index == 4)
+        ImagePath = "image4.jpg";
+    if(index == 5)
+        ImagePath = "image5.jpg"; 
+
+    document.getElementsByTagName("body")[0].style.backgroundImage="url('"+ ImagePath + "')"
+
+}
