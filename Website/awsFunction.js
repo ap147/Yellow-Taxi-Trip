@@ -3,6 +3,7 @@ function loadData() {
     loadDriverTripR();
     loadAdminDriverR();
 }
+
 var adminDriverRAdmin = new Array();
 var adminDriverRDriver = new Array();
 
@@ -26,7 +27,6 @@ function loadDriverTripR() {
     xhttp.open("GET", "https://82g3dn16l4.execute-api.us-east-2.amazonaws.com/default/getDriverToFareRelationShip", true);
     xhttp.send();
 }
-
 
 function loadAdminDriverR() {
      var xhttp = new XMLHttpRequest();
@@ -57,20 +57,39 @@ function loadAdmin(loggedID) {
     }
     for(i in idList){
         console.log("getting Driver ID : "+ adminDriverRDriver[i]);
-        loadDriverTrip(adminDriverRDriver[i]);
+       
+        loadDriverTrip(adminDriverRDriver[i], 2);
     }
 }
 
-function loadDriver(loggedID) {
+function loadDriver(loggedID , whatToDo) {
 
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText).body.Item;
 //         console.log(response);
-            document.getElementById("driverName").innerHTML = response.Name;
+           if (whatToDo == 1)
+           {
+               console.log("1");
+               document.getElementById("driverName").innerHTML = response.Name;
             document.getElementById("driverNumber").innerHTML = (response["License Number"]);
             document.getElementById("driverexpire").innerHTML = (response["Expiration Date"]);
+            }
+            
+            if (whatToDo == 2)
+                {
+                    console.log("2");
+            var table = document.getElementById("adminDriverDetails");
+            var row = table.insertRow(1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            
+            cell1.innerHTML = response.Name;
+            cell2.innerHTML = (response["License Number"]);
+            cell3.innerHTML = (response["Expiration Date"]);
+                }
              
         }
     };
@@ -95,10 +114,15 @@ function loadDriverTrip(loggedID) {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText).body.Item;
             //add row to html table code
+            var table = document.getElementById("driverFareTable");
+            var row = table.insertRow(1);
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
             
-            
-            
-            
+            cell1.innerHTML = response.tpep_pickup_datetime;
+            cell2.innerHTML = response.trip_distance + "Km";
+            cell3.innerHTML = "$" + response.total_amount;
             
             console.log(response.trip_distance);
         }

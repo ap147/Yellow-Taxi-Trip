@@ -17,7 +17,7 @@ function changePage() {
         document.getElementById("driverpage").style.display = "block";
         var userid;
         userid = document.getElementById("usernameID").value;
-        loadDriver(userid);
+        loadDriver(userid, 1);
         
     }
 
